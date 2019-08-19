@@ -18,7 +18,8 @@ router.post('/', function(req, res, next) {
     }
   };
   request(options, function(err, response, body){
-      res.render('index', {userData: body});
+    var userData = JSON.parse(body);
+      res.render('index', {userData});
   });
 });
 
